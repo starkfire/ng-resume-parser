@@ -1,0 +1,40 @@
+.text-parser {
+    min-height: 50vh;
+}
+
+.parser-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+
+    &-option {
+        margin: 0 1rem;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+}
+
+.upload-btn {
+    width: 100%;
+}
+
+.parser-output {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    height: 50vh;
+    margin: 2rem;
+    overflow: auto;
+
+    &-ocr {
+        background: #ddd;
+        border-radius: 12px;
+    }
+}
+
+pdf-viewer {
+    min-height: 50vh;
+}
