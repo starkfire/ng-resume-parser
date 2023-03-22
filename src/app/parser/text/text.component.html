@@ -1,0 +1,35 @@
+<div class="text-parser">
+    <div class="parser-tools">
+        <div class="parser-tools-left">
+            
+        </div>
+        <div class="parser-tools-right">
+            <input type="file" (change)="onChange($event)" hidden #targetfile>
+            <button 
+                class="parser-tools-option"
+                mat-flat-button color="primary"
+                (click)="targetfile.click()"
+            >
+                Upload PDF
+            </button>
+            <button 
+                class="parser-tools-option"
+                mat-flat-button color="primary"
+            >
+                Run Parser
+            </button>
+        </div>
+    </div>
+    <div class="parser-output">
+        <div class="parser-output-pdf">
+            <pdf-viewer
+                *ngIf="fileBuffer"
+                [src]="fileBuffer"
+                [render-text]="true"
+                [original-size]="false"
+            ></pdf-viewer>
+        </div>
+        <div class="parser-output-text">
+        </div>
+    </div>
+</div>
