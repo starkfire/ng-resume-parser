@@ -1,0 +1,21 @@
+.parser-container {
+    margin: 0 auto;
+    width: 90%;
+
+    &-header {
+        text-align: center;
+        padding: 3vh 0;
+    }
+}
+
+.project {
+    &-title {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    &-description {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
