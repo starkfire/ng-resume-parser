@@ -4,7 +4,13 @@
             
         </div>
         <div class="parser-tools-right">
-            <input type="file" (change)="onChange($event)" hidden #targetfile>
+            <input 
+                type="file"
+                accept="application/pdf"
+                (change)="onChange($event)" 
+                hidden 
+                #targetfile
+            >
             <button 
                 class="parser-tools-option"
                 mat-flat-button color="primary"
