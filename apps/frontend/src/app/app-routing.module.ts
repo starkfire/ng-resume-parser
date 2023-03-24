@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ParserComponent } from './parser/parser.component';
+
 const routes: Routes = [
     {
         path: 'parser',
-        loadChildren: () => import('./parser/parser.module').then(m => m.ParserModule)
+        component: ParserComponent
     },
     {
         path: '',
