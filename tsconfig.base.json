@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-resume-parser/frontend/feature-text": [
+        "libs/frontend/feature-text/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
