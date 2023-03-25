@@ -13,6 +13,7 @@ export class TextparserComponent {
 
   fileBuffer: string | object | Uint8Array | null = null;
   result = "";
+  loading = false;
 
   constructor(
     private snackBar: MatSnackBar,
@@ -41,17 +42,23 @@ export class TextparserComponent {
 
     formData.append('resume', file)
 
+    this.loading = true
+
+    this.showSnackbar("Parsing...", 'Done')
+
     this.textService.parse(formData)
       .subscribe({
         next: (res) => {
           this._passToReader(file)
           this.result = res.body.result
+
+          this.showSnackbar("Finished parsing the input file.", 'Done')
         },
         error: (err) => {
           this.showSnackbar("An Unknown Error Occurred", 'Done')
         },
         complete: () => {
-          this.showSnackbar("A PDF file has been staged for parsing.", 'Done')
+          this.loading = false
         }
       })
   }

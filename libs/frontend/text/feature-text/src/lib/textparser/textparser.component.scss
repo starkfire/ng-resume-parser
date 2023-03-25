@@ -27,13 +27,39 @@
     grid-column-gap: 1rem;
     height: 50vh;
     margin: 2rem;
-    overflow-y: auto;
-    overflow-x: hidden;
-    white-space: pre-line;
 
     &-text {
-        background: #ddd;
+        background: #021c38;
+        color: #fff;
+        padding: 2rem;
         border-radius: 12px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        white-space: pre-line;
+        position: relative;
+
+        mat-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &::-webkit-scrollbar {
+            width: 12px;
+            background: #021c38;
+            border-radius: 12px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 8px;
+            background: #021c38;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background: #aaa;
+        }
     }
 }
 

@@ -8,6 +8,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     PdfViewerModule,
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   declarations: [TextparserComponent],
   exports: [TextparserComponent],
