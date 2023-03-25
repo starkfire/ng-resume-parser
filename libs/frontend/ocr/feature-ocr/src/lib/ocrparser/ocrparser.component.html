@@ -1,0 +1,37 @@
+<div class="ocr-parser">
+    <div class="parser-tools">
+        <div class="parser-tools-left">
+            
+        </div>
+        <div class="parser-tools-right">
+            <input 
+                type="file"
+                accept=".jpeg,.jpg,.png"
+                (change)="onChange($event)" 
+                hidden 
+                #targetfile
+            >
+            <button 
+                class="parser-tools-option"
+                mat-flat-button color="primary"
+                (click)="targetfile.click()"
+            >
+                Upload Image
+            </button>
+        </div>
+    </div>
+    <div class="parser-output">
+        <div class="parser-output-pdf">
+            <!--<div *ngIf="fileBuffer">
+                <pdf-viewer
+                    [src]="fileBuffer"
+                    [render-text]="true"
+                    [original-size]="false"
+                ></pdf-viewer>
+            </div>-->
+        </div>
+        <div class="parser-output-text">
+            {{ result }}
+        </div>
+    </div>
+</div>
