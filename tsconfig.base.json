@@ -15,8 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ng-resume-parser/frontend/feature-text": [
-        "libs/frontend/feature-text/src/index.ts"
+      "@ng-resume-parser/frontend/text/data-access": [
+        "libs/frontend/text/data-access/src/index.ts"
+      ],
+      "@ng-resume-parser/frontend/text/feature-text": [
+        "libs/frontend/text/feature-text/src/index.ts"
       ]
     }
   },
