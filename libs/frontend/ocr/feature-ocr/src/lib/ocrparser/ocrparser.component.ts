@@ -12,6 +12,7 @@ import { OcrService } from '@ng-resume-parser/frontend/ocr/data-access'
 export class OcrparserComponent {
 
   result = ""
+  loading = false
 
   constructor(
     private snackBar: MatSnackBar,
@@ -45,18 +46,22 @@ export class OcrparserComponent {
 
     formData.append('resume', file)
 
+    this.loading = true
+
+    this.showSnackbar("Parsing...", 'Done')
+
     this.ocrService.parse(formData)
       .subscribe({
         next: (res) => {
           // this._passToReader(file)
-          console.log(res)
           this.result = res.body.result
+          this.showSnackbar("Finished parsing the input image.", 'Done')
         },
         error: (err) => {
           this.showSnackbar("An Unknown Error Occurred", 'Done')
         },
         complete: () => {
-          this.showSnackbar("A PDF file has been staged for parsing.", 'Done')
+          this.loading = false
         }
       })
   }

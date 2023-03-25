@@ -16,21 +16,18 @@
                 mat-flat-button color="primary"
                 (click)="targetfile.click()"
             >
-                Upload Image
+                <mat-icon fontIcon="image"></mat-icon> Upload Image
             </button>
         </div>
     </div>
     <div class="parser-output">
         <div class="parser-output-pdf">
-            <!--<div *ngIf="fileBuffer">
-                <pdf-viewer
-                    [src]="fileBuffer"
-                    [render-text]="true"
-                    [original-size]="false"
-                ></pdf-viewer>
-            </div>-->
+            
         </div>
-        <div class="parser-output-text">
+        <div class="parser-output-text" *ngIf="loading">
+            <mat-spinner color="accent"></mat-spinner>
+        </div>
+        <div class="parser-output-text" *ngIf="!loading">
             {{ result }}
         </div>
     </div>
