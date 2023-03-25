@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 import { MatTabsModule } from '@angular/material/tabs';
-
-import { FrontendFeatureTextModule } from '@ng-resume-parser/frontend/feature-text';
+import { FrontendTextFeatureTextModule } from '@ng-resume-parser/frontend/text/feature-text';
 
 @Component({
   selector: 'ng-resume-parser-parser',
@@ -11,7 +10,7 @@ import { FrontendFeatureTextModule } from '@ng-resume-parser/frontend/feature-te
   styleUrls: ['./parser.component.scss'],
   imports: [
     MatTabsModule,
-    FrontendFeatureTextModule
+    FrontendTextFeatureTextModule
   ]
 })
 
