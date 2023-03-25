@@ -21,8 +21,10 @@
         </div>
     </div>
     <div class="parser-output">
-        <div class="parser-output-pdf">
-            
+        <div class="parser-output-img">
+            <div *ngIf="fileBase64">
+                <img [src]="fileBase64" />
+            </div>
         </div>
         <div class="parser-output-text" *ngIf="loading">
             <mat-spinner color="accent"></mat-spinner>

@@ -11,6 +11,7 @@ import { OcrService } from '@ng-resume-parser/frontend/ocr/data-access'
 
 export class OcrparserComponent {
 
+  fileBase64: string | ArrayBuffer | null = null;
   result = ""
   loading = false
 
@@ -29,7 +30,7 @@ export class OcrparserComponent {
     ]
 
     if (!VALID_TYPES.includes(targetFile.type)) {
-      this.showSnackbar("Invalid File Format. Only PDFs are allowed.", 'Done')
+      this.showSnackbar("Invalid File Format. Only JPEGs, JPGs, and PNGs are allowed.", 'Done')
       return false
     }
 
@@ -47,13 +48,14 @@ export class OcrparserComponent {
     formData.append('resume', file)
 
     this.loading = true
+    this.fileBase64 = null
 
     this.showSnackbar("Parsing...", 'Done')
 
     this.ocrService.parse(formData)
       .subscribe({
         next: (res) => {
-          // this._passToReader(file)
+          this._passToReader(file)
           this.result = res.body.result
           this.showSnackbar("Finished parsing the input image.", 'Done')
         },
@@ -64,6 +66,16 @@ export class OcrparserComponent {
           this.loading = false
         }
       })
+  }
+
+  _passToReader(file: File) {
+    const reader = new FileReader()
+
+    reader.onloadend = () => {
+      this.fileBase64 = reader.result
+    }
+
+    reader.readAsDataURL(file)
   }
 
   showSnackbar(content: string, action: string) {
