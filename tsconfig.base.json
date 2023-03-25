@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ng-resume-parser/frontend/ocr/data-access": [
+        "libs/frontend/ocr/data-access/src/index.ts"
+      ],
+      "@ng-resume-parser/frontend/ocr/feature-ocr": [
+        "libs/frontend/ocr/feature-ocr/src/index.ts"
+      ],
       "@ng-resume-parser/frontend/text/data-access": [
         "libs/frontend/text/data-access/src/index.ts"
       ],
