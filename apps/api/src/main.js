@@ -4,6 +4,7 @@ const cors = require('cors')
 const path = require('path')
 
 const TextAPI = require('./text/api-text.controller')
+const OcrAPI = require('./ocr/api-ocr.controller')
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
@@ -26,6 +27,7 @@ app.get('/api', (req, res) => {
 });
 
 app.use('/api/text', TextAPI)
+app.use('/api/ocr', OcrAPI)
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
