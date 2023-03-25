@@ -21,6 +21,24 @@
     width: 100%;
 }
 
+@mixin attachCustomScrollbar($thumbColor, $trackColor) {
+    &::-webkit-scrollbar {
+        width: 12px;
+        background: $trackColor;
+        border-radius: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 8px;
+        background: $trackColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background: $thumbColor;
+    }
+}
+
 .parser-output {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -29,12 +47,17 @@
     margin: 2rem;
 
     &-img {
+        overflow-y: auto;
+        overflow-x: hidden;
+
         img {
             max-width: 100%;
             max-height: 100%;
             display: block;
             object-fit: contain;
         }
+
+        @include attachCustomScrollbar(#aaa, transparent);
     }
 
     &-text {
@@ -55,20 +78,6 @@
             transform: translate(-50%, -50%);
         }
 
-        &::-webkit-scrollbar {
-            width: 12px;
-            background: #021c38;
-            border-radius: 12px;
-        }
-
-        &::-webkit-scrollbar-track {
-            border-radius: 8px;
-            background: #021c38;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            border-radius: 8px;
-            background: #aaa;
-        }
+        @include attachCustomScrollbar(#aaa, #021c38);
     }
 }
