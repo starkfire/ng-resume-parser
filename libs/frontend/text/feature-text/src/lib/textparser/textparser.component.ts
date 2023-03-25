@@ -44,6 +44,8 @@ export class TextparserComponent {
 
     this.loading = true
 
+    this.fileBuffer = null
+
     this.showSnackbar("Parsing...", 'Done')
 
     this.textService.parse(formData)
