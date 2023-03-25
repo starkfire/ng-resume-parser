@@ -68,27 +68,8 @@ export class TextparserComponent {
     reader.readAsArrayBuffer(file)
   }
 
-  runParser() {
-    
-  }
-
   showSnackbar(content: string, action: string) {
     this.snackBar.open(content, action, { duration: 2000 })
   }
-
-  /*onSubmit() {
-    const {} = this.data
-
-    this.loginService.parse(data)
-      .subscribe(resp => {
-        if (resp.status == 200) {
-          // do something
-        }
-      }, err => {
-        if (err.status == 401) {
-          // do something
-        }
-      })
-  }*/
 
 }
