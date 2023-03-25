@@ -29,14 +29,16 @@
     </div>
     <div class="parser-output">
         <div class="parser-output-pdf">
-            <pdf-viewer
-                *ngIf="fileBuffer"
-                [src]="fileBuffer"
-                [render-text]="true"
-                [original-size]="false"
-            ></pdf-viewer>
+            <div *ngIf="fileBuffer">
+                <pdf-viewer
+                    [src]="fileBuffer"
+                    [render-text]="true"
+                    [original-size]="false"
+                ></pdf-viewer>
+            </div>
         </div>
         <div class="parser-output-text">
+            {{ result }}
         </div>
     </div>
 </div>

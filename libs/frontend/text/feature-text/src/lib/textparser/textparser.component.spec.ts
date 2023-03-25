@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextParserComponent } from './text-parser.component';
+import { TextparserComponent } from './textparser.component';
 
-describe('TextParserComponent', () => {
-  let component: TextParserComponent;
-  let fixture: ComponentFixture<TextParserComponent>;
+describe('TextparserComponent', () => {
+  let component: TextparserComponent;
+  let fixture: ComponentFixture<TextparserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TextParserComponent],
+      declarations: [TextparserComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TextParserComponent);
+    fixture = TestBed.createComponent(TextparserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

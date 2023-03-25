@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'frontend-feature-text',
-  preset: '../../../jest.preset.js',
+  displayName: 'frontend-text-feature-text',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../../coverage/libs/frontend/feature-text',
+  coverageDirectory: '../../../../coverage/libs/frontend/text/feature-text',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

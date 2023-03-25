@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { TextparserComponent } from './textparser/textparser.component';
 
-import { TextParserComponent } from './text-parser/text-parser.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,7 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     MatSnackBarModule
   ],
-  declarations: [TextParserComponent],
-  exports: [TextParserComponent],
+  declarations: [TextparserComponent],
+  exports: [TextparserComponent],
 })
-export class FrontendFeatureTextModule {}
+export class FrontendTextFeatureTextModule {}
